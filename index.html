@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Indie+Flower&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&family=Russo+One&display=swap" rel="stylesheet">
     <style>
         body{
-            background: url("https://img.freepik.com/free-photo/artistic-blurry-colorful-wallpaper-background_58702-8553.jpg?semt=ais_hybrid&w=740&q=80");
+            background: url("https://img.freepik.com/free-vector/subtle-rombus-white-gray-pattern-background_1017-25098.jpg?semt=ais_hybrid&w=740&q=80");
             background-size: cover;
         }
         .container{
@@ -16,7 +16,7 @@
             width: 500px;
             height: auto;
             margin-top: 70px;
-            background: url("https://e1.pxfuel.com/desktop-wallpaper/581/154/desktop-wallpaper-backgrounds-for-login-page-login-page.jpg");
+            background: url("https://static.vecteezy.com/system/resources/thumbnails/019/939/781/small/subtle-deep-blue-gradient-background-free-vector.jpg");
             background-size: cover;
             color: white;
             font-family: Funnel Display, sans;
@@ -24,15 +24,21 @@
             text-align: center;
         }
         .container:hover{
-            box-shadow: 0 0 4px 5px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.5);
             transition: box-shadow 0.5s;
+        }
+        #logo{
+            width: 130px;
+            height: 130px;
         }
 
     </style>
 </head>
 <body>
     <div class="container">
-        <h1><b>Log-In</b></h1>
+        <img src="https://files.orangeapps.ph/disk001/School_Files/1/school-65/school_profile/1724046681-141.png" alt="" id="logo">
+        <br>
+        <h1><b>Login</b></h1>
         <br>
         <details ontoggle="help()">
         <summary>
@@ -57,48 +63,51 @@
             <br><br>
             <input type="checkbox" class="form-check-input" id="case" name="case" value="checked">
             <label for="case" id="checkboxID" class="form-check-label">Stay Logged In</label>
-            <br><br>
-            <button class="btn" onclick="logging_in()" type="submit" style="background-color: rgb(79, 75, 197);">Log In</button>
+            <p id="display" class="fst-italic text-warning"></p>
+            <br>
+            <button class="btn" onclick="logging_in()" type="button" style="background-color: rgb(79, 75, 197);" id="loginBTN">Log In</button>
             <button class="btn" type="reset" style="background-color: rgb(41, 40, 85);">Reset All</button>
         </form>
     </details>
     </div>
 
     <script>
+        let attempt_counter = 0;
+
         function logging_in() {
         const authenticate = document.getElementById("checkboxID").checked;
         let Username = document.getElementById("name").value;
         let Password = document.getElementById("pass").value;
         let Email = document.getElementById("address").value;
-        const actualUsername = "HelloIam20yrsold";
-        const actualPassword = "45397925";
-        const actualEmail = "burgers@gmail.com"
+        let granted = "Welcome " + Username;
+        let denied = "Sorry. You have reached the max number of attempts. Locking log-in";
 
-        switch (authenticate) {
-            case true:
-                break;
-        
-            case false:
-                break;
-        }
-
-        if (!Username || !Password) {
-            alert('You have not input anything yet. Please input a value');
-            return false;
-        } 
-
-        if (Username === actualUsername && Password === actualPassword && Email === actualEmail) {
-            alert('Welcome Back ' + actualUsername + "!");
+        while (attempt_counter < 3) {
+        if (Username === "HelloIam20yrsold" && Password === "45397925" && Email === "burgers@gmail.com") {
+            alert(granted);
+            attempt_counter = 0; // reset attempts after successful login
+            document.getElementById("display").innerHTML = "";
+            window.location.href = "notebooks.html";
+            break; // stop loop
         } else {
-            alert('Invalid username/password/email inputted.');
+            attempt_counter++;
+            document.getElementById("display").innerHTML =
+                "Incorrect username and/or password. Attempt " + attempt_counter + " of 3 ";
+            break; // stop loop for this click
         }
 
-        return false;
+        }
+        // lock after max attempts
+        if (attempt_counter >= 3) {
+            alert(denied);
+            document.getElementById("loginBTN").disabled = true; // disable button
+        }
         }
 
         function help() {
             document.getElementById("help").innerHTML = "Fill out to log in to your account.";
         }
+
     </script>
 </body>
 </html>
