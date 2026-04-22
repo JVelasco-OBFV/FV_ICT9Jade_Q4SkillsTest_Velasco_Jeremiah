@@ -7,26 +7,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Indie+Flower&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&family=Russo+One&display=swap" rel="stylesheet">
     <style>
-       a, h1, h2, p{font-family: Questrial, sans;}
-    .logo{width: 100px;height: 100px;margin-bottom: 20px;}
+       a, h1, h2, p, h3{font-family: Questrial, sans;}
+    .logo{width: 60px;height: 60px;}
     #log{width: 30px;height: 30px;}
     #yes{box-shadow: 0 0 10px 5px rgba(27, 27, 27, 0.5);}
+    #yes:hover{
+      box-shadow: 0 0 10px 5px rgba(77, 151, 255, 0.5);
+      transition: box-shadow 0.5s;
+    }
     #header{
       background-color: rgb(0, 32, 86);
       width: 175px;
-      padding: 10px;
+      padding: 13px;
       border-radius: 20px;
       color: white;
+      text-align: center;
+
     }
     #main-navbar{
       position: sticky;
       top: 0;
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 1.0);
+      box-shadow: 0 0 10px 5px rgba(27, 27, 27, 0.5);
+      height: 80px;
     }
-      #img{
-        width: 280px;
-        height: 150px;
-      }
     </style>
     </style>
 
@@ -63,51 +66,119 @@
 </nav>
 <br><br>
 <div class="container">
-    <h1 id="header"><b>Subjects</b></h1>
+    <h2 id="header"><b>Subjects</b></h2>
     <br>
     <div class="row gap-5 justify-content-center" id="taskrow1" style="height: 290px;">
-      <div class="col-lg-2 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background-color: rgb(74, 115, 74); height: 300px;">
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://img.freepik.com/premium-photo/physics-formulas-diagrams-chalkboard_721890-2286.jpg?semt=ais_hybrid&w=740&q=80');" onclick="openClassfeed()">
         <h2><b>Science</b></h2>
+        <p><b>--</b></p>
+        <p><b>Ma. Jillian Talavera</b></p>
         <br>
-        <img src="https://images.squarespace-cdn.com/content/v1/664c7ae50eea9c731b37e817/bb4cda9d-c5b1-4c17-b930-fd4a7b733814/OBMC+Junior+High+School+Student" alt="" id="img">
+        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: 38vh; border-radius: 50px;"></div>
       </div>
       <br>
-      <div class="col-lg-2  h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background-color: rgb(118, 88, 182);">
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background: url('https://img.freepik.com/free-vector/computer-with-big-data-stream-isometric-banner_107791-248.jpg?semt=ais_hybrid&w=740&q=80');"onclick="openClassfeed()">
         <h2><b>ICT</b></h2>
+        <p><b>--</b></p>
+        <p>Renn Santos</p>
         <br>
-        <p>Quarterly Project// Apr 20, 2024</p>
+        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: 38vh; border-radius: 50px;"></div>
       </div>
       <br>
-      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background-color: rgb(242, 91, 184);">
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://cdn.vectorstock.com/i/500p/98/65/ethnic-seamless-pattern-vector-47229865.jpg');"onclick="openClassfeed()">
         <h2><b>Filipino</b></h2>
+        <p><b>--</b></p>
+        <p>Jemima Nicole Francisco</p>
         <br>
-        <p>Drill Sheet #3// Apr 20, 2024</p>
+        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
       </div>  
     </div>
     <br>
     <div class="row gap-5 justify-content-center" id="taskrow1" style="height: 290px;">
-      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background-color: rgb(207, 78, 78);">
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background: url('https://cod.edu/_resources/img/900x600/literature-banner-900x600.jpg')" onclick="openClassfeed()">
         <h2><b>English</b></h2>
+        <p><b>--</b></p>
+        <p>Kristin Joy Avila</p>
         <br>
-        <p>writing Project// Apr 20, 2024</p>
+         <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
       </div>
       <br>
-      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background-color: rgb(152, 100, 16);">
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCOL_2t1aAQrp5ee76C1qeifn1ZEWHt0PD1A&s')" onclick="openClassfeed()">
         <h2><b>Social Studies</b></h2>
+        <p><b>--</b></p>
+        <p>Jose Lorenzo Fernandez</p>
         <br>
-        <p>writing Project// Apr 20, 2024</p>
+         <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
       </div>
       <br>
-      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background-color: rgb(140, 199, 255);">
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://oneplanet.com/wp-content/uploads/2025/11/Pooran-Philosophy-768x432.jpg')" onclick="openClassfeed()">
         <h2><b>Values Education</b></h2>
+        <p><b>--</b></p>
+        <p>Bernard P. Buntile</p>
         <br>
-        <p>writing Project// Apr 20, 2024</p>
+        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
       </div>
     </div>
-    
+    <br>
+    <div class="row gap-5 justify-content-center" id="taskrow1" style="height: 290px;">
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background: url('https://i.pinimg.com/736x/65/f0/c0/65f0c0fc14e5b2673e943752c253a98a.jpg');" onclick="openClassfeed()">
+        <h2><b>Math</b></h2>
+        <p><b>--</b></p>
+        <p><b>Jill Manny Ramos</b></p>
+        <br>
+        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: 38vh; border-radius: 50px;"></div>
+      </div>
+      <br>
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://image.shutterstock.com/image-vector/bread-seamless-pattern-background-hand-250nw-2684704203.jpg');"onclick="openClassfeed()">
+        <h2><b>TLE</b></h2>
+        <p><b>--</b></p>
+        <p>Hannah Ruth Del Barrio</p>
+        <br>
+        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: 38vh; border-radius: 50px;"></div>
+      </div>
+      <br>
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://png.pngtree.com/thumb_back/fh260/background/20210312/pngtree-yellow-city-silhouette-sports-background-image_582391.jpg');"onclick="openClassfeed()">
+        <h2><b>PEH</b></h2>
+        <p><b>--</b></p>
+        <p>Alfred Cases</p>
+        <br>
+        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
+      </div>  
+    </div>
+    <br>
+    <div class="row gap-5 justify-content-center" id="taskrow1" style="height: 290px;">
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://img.freepik.com/premium-photo/wooden-blocks-with-people-icon-gray-background-organization-structure-social-network-leadership-team-building-job-recruitment-management-human-resources-concepts_256259-5007.jpg?w=360');" onclick="openClassfeed()">
+        <h2><b>LT/LOP</b></h2>
+        <p><b>--</b></p>
+        <p><b>Flerida Kate Manodon</b></p>
+        <br>
+        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
 
+      </div>
+      <br>
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background: url('https://i.pinimg.com/736x/8e/6a/a6/8e6aa61997ea72e8a8ff221a0778876c.jpg');"onclick="openClassfeed()">
+        <h2><b>Music and Arts</b></h2>
+        <p><b>--</b></p>
+        <p>Denver Martin</p>
+        <br>
+        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: 38vh; border-radius: 50px;"></div>
+      </div>
+      <br>
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://static.vecteezy.com/system/resources/thumbnails/000/694/605/small/abstract-orange-stylish-wave-banner-background.jpg');"onclick="openClassfeed()">
+        <h2><b>Homeroom</b></h2>
+        <p><b>--</b></p>
+        <p>Jose Marie Macaya</p>
+        <br>
+        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
+      </div>  
+    </div>
 </div>
 
+<script>
+  function openClassfeed() {
+    alert('Virtual notebook is unavailable at the moment. Please check in once you have been admitted access');
+  }
+</script>
 
 </body>
 </html>
