@@ -22,9 +22,10 @@
             font-family: Funnel Display, sans;
             border-radius: 40px;
             text-align: center;
+            box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.5);
         }
         .container:hover{
-            box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 6px 10px rgba(137, 222, 255, 0.5);
             transition: box-shadow 0.5s;
         }
         #logo{
@@ -82,7 +83,7 @@
         let granted = "Welcome " + Username;
         let denied = "Sorry. You have reached the max number of attempts. Locking log-in";
 
-        while (attempt_counter < 3) {
+        do {
         if (Username === "HelloIam20yrsold" && Password === "45397925" && Email === "burgers@gmail.com") {
             alert(granted);
             attempt_counter = 0; // reset attempts after successful login
@@ -95,8 +96,8 @@
                 "Incorrect username and/or password. Attempt " + attempt_counter + " of 3 ";
             break; // stop loop for this click
         }
-
         }
+        while (attempt_counter < 3);
         // lock after max attempts
         if (attempt_counter >= 3) {
             alert(denied);
