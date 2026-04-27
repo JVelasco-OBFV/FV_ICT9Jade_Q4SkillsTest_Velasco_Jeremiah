@@ -7,77 +7,82 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Indie+Flower&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Questrial&family=Russo+One&display=swap" rel="stylesheet">
     <style>
-       a, h1, h2, p, h3{font-family: Questrial, sans;}
-    .logo{width: 60px;height: 60px;}
+    a, h2, p{font-family: Questrial, sans;}
+    .logo{width: 140px;height: 140px;margin-top: 80px; margin-bottom: 40px;}
     #log{width: 30px;height: 30px;}
-    #yes{box-shadow: 0 0 10px 5px rgba(27, 27, 27, 0.5);}
-    #yes:hover{
-      box-shadow: 0 0 10px 5px rgba(77, 151, 255, 0.5);
-      transition: box-shadow 0.5s;
-      transform: translateY(-10px);
-      transition: transform 1s;
-      
+    #yes{box-shadow: 0 0 10px 5px rgba(27, 27, 27, 0.5);transition: box-shadow 0.5s;transition: transform 0.6s ease;}
+    #yes:hover{box-shadow: 0 0 10px 5px rgba(77, 151, 255, 0.5);transform: translateY(-10px);}
+    #header{color: rgb(16, 0, 121);text-align: center;font-family: Funnel Display, sans;text-align: left;}
+    .container{margin-left: 200px;}
+    @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
     }
-    #header{
-      background-color: rgb(0, 32, 86);
-      width: 175px;
-      padding: 13px;
-      border-radius: 20px;
-      color: white;
+    .sidebar a {float: left;}
+      div.content {margin-left: 0;}
+    }
+
+    @media screen and (max-width: 400px) {
+      .sidebar a {
       text-align: center;
-
+      float: none;
     }
-    #main-navbar{
-      position: sticky;
-      top: 0;
-      box-shadow: 0 0 10px 5px rgba(27, 27, 27, 0.5);
-      height: 80px;
+    /*Sources used: 
+    https://www.w3schools.com/cssref/css3_pr_transform.php
+    https://www.w3schools.com/howto/howto_css_sidebar_responsive.asp
+    */
     }
-    </style>
-    </style>
+    .sidebar {
+      margin: 0;
+      padding: 0;
+      width: 150px;
+      background-color: #001353;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+      text-align: left;
+    }
+  .sidebar a {
+    display: block;
+    color: rgb(254, 251, 251);
+    padding: 16px;
+    text-decoration: none;
+    transition: background-color 0.6s;
+  }
+ 
+  .sidebar a.active {
+    background-color: #045faa;
+    color: white;
+  }
 
+  .sidebar a:hover:not(.active) {
+    background-color: #00042c;
+    color: white;
+  }
+  </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="main-navbar">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="https://images.squarespace-cdn.com/content/v1/664c7ae50eea9c731b37e817/8b5611eb-ff3a-407f-9adc-e116a23373fc/OBMC+LOGO+2024-04.png" alt="" class="logo"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><b>Virtual Notebook</b></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Tasks</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-      </form>
+    <div class="sidebar">
+      <img src="https://images.squarespace-cdn.com/content/v1/664c7ae50eea9c731b37e817/8b5611eb-ff3a-407f-9adc-e116a23373fc/OBMC+LOGO+2024-04.png" alt="" class="logo">
+      <a href="#home">Dashboard</a>
+      <a href="#news" class="active">Virtual Notebook</a>
+      <a href="#contact">Tasks</a>
+      <a href="#about">Profile</a>
+      <a href="#about">Logout</a>
     </div>
-  </div>
-</nav>
-<br><br>
-<div class="container">
-    <h2 id="header"><b>Subjects</b></h2>
-    <br>
+  <br><br>
+  <div class="container">
+    <h2 id="header" style="margin-left: 50px;"><b>Subjects</b></h2>
+    <br><br>
     <div class="row gap-5 justify-content-center" id="taskrow1" style="height: 290px;">
       <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://img.freepik.com/premium-photo/physics-formulas-diagrams-chalkboard_721890-2286.jpg?semt=ais_hybrid&w=740&q=80');" onclick="openClassfeed()">
         <h2><b>Science</b></h2>
         <p><b>--</b></p>
         <p><b>Ma. Jillian Talavera</b></p>
         <br>
-        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: 38vh; border-radius: 50px;"></div>
+        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>
       <br>
       <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background: url('https://img.freepik.com/free-vector/computer-with-big-data-stream-isometric-banner_107791-248.jpg?semt=ais_hybrid&w=740&q=80');"onclick="openClassfeed()">
@@ -85,7 +90,7 @@
         <p><b>--</b></p>
         <p>Renn Santos</p>
         <br>
-        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: 38vh; border-radius: 50px;"></div>
+        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>
       <br>
       <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://cdn.vectorstock.com/i/500p/98/65/ethnic-seamless-pattern-vector-47229865.jpg');"onclick="openClassfeed()">
@@ -93,7 +98,7 @@
         <p><b>--</b></p>
         <p>Jemima Nicole Francisco</p>
         <br>
-        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
+        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>  
     </div>
     <br>
@@ -103,7 +108,7 @@
         <p><b>--</b></p>
         <p>Kristin Joy Avila</p>
         <br>
-         <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
+         <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>
       <br>
       <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCOL_2t1aAQrp5ee76C1qeifn1ZEWHt0PD1A&s')" onclick="openClassfeed()">
@@ -111,15 +116,15 @@
         <p><b>--</b></p>
         <p>Jose Lorenzo Fernandez</p>
         <br>
-         <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
+         <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>
       <br>
-      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://oneplanet.com/wp-content/uploads/2025/11/Pooran-Philosophy-768x432.jpg')" onclick="openClassfeed()">
-        <h2><b>Values Education</b></h2>
+      <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-light" id="yes" style="background: url('https://oneplanet.com/wp-content/uploads/2025/11/Pooran-Philosophy-768x432.jpg')" onclick="openClassfeed()">
+        <h2><b>VE</b></h2>
         <p><b>--</b></p>
         <p>Bernard P. Buntile</p>
         <br>
-        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
+        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>
     </div>
     <br>
@@ -129,7 +134,7 @@
         <p><b>--</b></p>
         <p><b>Jill Manny Ramos</b></p>
         <br>
-        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: 38vh; border-radius: 50px;"></div>
+        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>
       <br>
       <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://image.shutterstock.com/image-vector/bread-seamless-pattern-background-hand-250nw-2684704203.jpg');"onclick="openClassfeed()">
@@ -137,7 +142,7 @@
         <p><b>--</b></p>
         <p>Hannah Ruth Del Barrio</p>
         <br>
-        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: 38vh; border-radius: 50px;"></div>
+        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>
       <br>
       <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://png.pngtree.com/thumb_back/fh260/background/20210312/pngtree-yellow-city-silhouette-sports-background-image_582391.jpg');"onclick="openClassfeed()">
@@ -145,7 +150,7 @@
         <p><b>--</b></p>
         <p>Alfred Cases</p>
         <br>
-        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
+        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>  
     </div>
     <br>
@@ -155,7 +160,7 @@
         <p><b>--</b></p>
         <p><b>Flerida Kate Manodon</b></p>
         <br>
-        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
+        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: auto; border-radius: 50px;"></div>
 
       </div>
       <br>
@@ -164,7 +169,7 @@
         <p><b>--</b></p>
         <p>Denver Martin</p>
         <br>
-        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: 38vh; border-radius: 50px;"></div>
+        <div class="col" style="background-color: rgb(36, 36, 36); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>
       <br>
       <div class="col-lg-2 h-75 w-25 text-left p-4 rounded-4 text-dark" id="yes" style="background: url('https://static.vecteezy.com/system/resources/thumbnails/000/694/605/small/abstract-orange-stylish-wave-banner-background.jpg');"onclick="openClassfeed()">
@@ -172,7 +177,7 @@
         <p><b>--</b></p>
         <p>Jose Marie Macaya</p>
         <br>
-        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: 38vh; border-radius: 50px;"></div>
+        <div class="col" style="background-color: rgb(37, 37, 37); height: 20px; width: auto; border-radius: 50px;"></div>
       </div>  
     </div>
 </div>
