@@ -75,8 +75,21 @@
     <script>
         let attempt_counter = 0;
 
+        function logged(){
+        const authenticate = document.getElementById("case").checked;
+
+        switch (authenticate) {
+            case true:
+              alert('Your credentials have been saved!')
+                break;
+        
+            case false:
+              alert('Your credentials were cleared.')
+                break;
+        }
+        }
+        
         function logging_in() {
-        const authenticate = document.getElementById("checkboxID").checked;
         let Username = document.getElementById("name").value;
         let Password = document.getElementById("pass").value;
         let Email = document.getElementById("address").value;
